@@ -27,3 +27,13 @@ Plant.create!(
   image_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/plants/dieffenbachia.jpg",
   garden: other
 )
+
+tag_names = Tag::TAG_NAMES
+
+tag_names.each do |tag_name|
+  Tag.create!(name: tag_name)
+end
+
+orange_tree = Plant.last
+tag = Tag.first
+plant_tag = PlantTag.create!(plant: orange_tree, tag: tag)
