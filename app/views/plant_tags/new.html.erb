@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Associate <%= @plant.name %> to tags</h1>
   <%= simple_form_for([@plant, @plant_tag]) do |f| %>
-      <%= f.input :tag, collection: Tag.all, input_html: { multiple: true }, include_hidden: false %>
+    <%= f.input :tag, collection: Tag.all, input_html: { multiple: true, data: { controller: 'select2' }}, include_hidden: false %>
     <%= f.submit 'Add tag', class: 'btn btn-primary' %>
   <% end %>
 </div>
