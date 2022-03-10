@@ -1,0 +1,5 @@
+<h1>Associate <%= @plant.name %> to tags</h1>
+<%= simple_form_for([@plant, @plant_tag]) do |f| %>
+  <%= f.input :tag, collection: Tag.all %>
+  <%= f.submit 'Add tag', class: 'btn btn-primary' %>
+<% end %>
